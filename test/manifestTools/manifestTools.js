@@ -17,7 +17,7 @@ describe('Manifest Tools', function () {
       });
     });
 
-    it('Convert from W3C to chromeOS', function (done) { 
+    it('Convert from W3C to platform template', function (done) { 
       var manifestInfo = {
         content: {
           'name': 'Google Mail',
@@ -39,20 +39,15 @@ describe('Manifest Tools', function () {
       var expectedManifestInfo = {
         content: {
           'name': 'Google Mail',
-          'version': '0.0.1',
-          'app': {
-            // 'urls': [ 'http://mail.google.com/mail/' ],
-            'launch': {
-              'web_url': 'http://mail.google.com/mail/'
-            }
-          },
+          "start_url": "http://mail.google.com/mail/",
+          'color': 'red',
           'icons': {
             '64': 'icon_64.png',
             '128': 'icon_128.png'
           },
           'manifest_version': 2
         },
-        format: lib.constants.CHROME_MANIFEST_FORMAT
+        format: lib.constants.STRAWMAN_MANIFEST_FORMAT
       };
 
       manifest.convertFromBase(manifestInfo, function(err, result) {

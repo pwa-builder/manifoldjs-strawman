@@ -6,7 +6,7 @@ var lib = require('manifoldjs-lib');
 
 var manifest = require('../../lib/manifest.js');
 
-describe('manifest: ChromeOS Manifest', function () {
+describe('manifest: sample platform Manifest', function () {
   describe('convertFromBase()', function () {
     it('Should return an Error if manifest info is undefined', function(done) {
       manifest.convertFromBase(undefined, function(err) {
@@ -40,7 +40,7 @@ describe('manifest: ChromeOS Manifest', function () {
 
     it('Should return the transformed object', function (done) {
       var name = 'name';
-      var siteUrl = 'url';
+      var siteUrl = 'start_url';
 
       var originalManifestInfo = {
         content: {
@@ -56,19 +56,17 @@ describe('manifest: ChromeOS Manifest', function () {
         should.exist(result);
         /*jshint -W030 */
         result.should.have.property('content').which.is.an.Object;
-        result.should.have.property('format', lib.constants.CHROME_MANIFEST_FORMAT);
+        result.should.have.property('format', lib.constants.STRAWMAN_MANIFEST_FORMAT);
 
         var manifest = result.content;
 
-        manifest.should.have.property('app');
+        manifest.should.have.property('manifest_version');
         manifest.should.have.property('name', name);
-        manifest.should.not.have.properties('orientation', 'display', 'icons');
+
 
         //manifest.app.should.have.property('urls').which.is.an.Array;
         //manifest.app.urls.should.containEql(siteUrl);
 
-        manifest.app.should.have.property('launch').which.is.an.Object;
-        manifest.app.launch.should.have.property('web_url', siteUrl);
 
         done();
       });
@@ -76,7 +74,7 @@ describe('manifest: ChromeOS Manifest', function () {
 
     it('Should return the transformed object with icons', function (done) {
       var name = 'name';
-      var siteUrl = 'url';
+      var siteUrl = 'start_url';
 
       var originalManifestInfo = {
         content: {
@@ -107,17 +105,15 @@ describe('manifest: ChromeOS Manifest', function () {
         should.exist(result);
         /*jshint -W030 */
         result.should.have.property('content').which.is.an.Object;
-        result.should.have.property('format', lib.constants.CHROME_MANIFEST_FORMAT);
+        result.should.have.property('format', lib.constants.STRAWMAN_MANIFEST_FORMAT);
 
         var manifest = result.content;
         manifest.should.have.property('name', name);
         manifest.should.not.have.properties('orientation', 'display');
 
-        manifest.should.have.property('app');
+
         //manifest.app.should.have.property('urls').which.is.an.Array;
         //manifest.app.urls.should.containEql(siteUrl);
-        manifest.app.should.have.property('launch').which.is.an.Object;
-        manifest.app.launch.should.have.property('web_url', siteUrl);
 
         manifest.should.have.property('icons').which.is.an.Object;
         manifest.icons.should.containEql({'64': 'icon/hd_small'});
