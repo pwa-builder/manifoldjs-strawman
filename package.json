@@ -59,6 +59,5 @@
   },
   "homepage": "https://github.com/manifoldjs/manifoldjs-chrome",
   "readme": "# manifoldjs-chrome\r\nManifoldJS Platform Template",
-  "readmeFilename": "README.md",
-  "_id": "manifoldjs-strawman@0.0.1"
+  "readmeFilename": "README.md"
 }
