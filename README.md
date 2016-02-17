@@ -1,2 +1,2 @@
-# manifoldjs-chrome
-ManifoldJS Chrome OS platform
+# manifoldjs-strawman
+Manifoldjs Sample platform
