@@ -55,9 +55,9 @@
     "debug-tests": "mocha test/**/*.js --debug-brk"
   },
   "bugs": {
-    "url": "https://github.com/manifoldjs/manifoldjs-office/issues"
+    "url": "https://github.com/manifoldjs/manifoldjs-strawman/issues"
   },
-  "homepage": "https://github.com/manifoldjs/manifoldjs-office",
-  "readme": "# manifoldjs-office\r\nManifoldJS Platform Template",
+  "homepage": "https://github.com/manifoldjs/manifoldjs-strawman",
+  "readme": "# manifoldjs-strawman\r\nManifoldJS Platform Template",
   "readmeFilename": "README.md"
 }
