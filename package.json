@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "q": "^1.4.1",
-    "manifoldjs-lib": "^0.1.1"
+    "pwabuilder-lib": "^2.0.0"
   },
   "devDependencies": {
     "blanket": "1.1.6",
