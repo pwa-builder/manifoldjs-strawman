@@ -2,7 +2,7 @@
 
 var should = require('should');
 
-var lib = require('manifoldjs-lib');
+var lib = require('pwabuilder-lib');
 
 var manifest = require('../../lib/manifest.js');
 
